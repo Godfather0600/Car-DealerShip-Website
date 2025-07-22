@@ -1,5 +1,0 @@
-[flake8]
-max-line-length = 120
-exclude = djangoenv,frontend/node_modules,venv,.git,__pycache__
-
-
