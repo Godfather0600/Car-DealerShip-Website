@@ -42,7 +42,8 @@ def registration(request):
 
     try:
         User.objects.get(username=username)
-        return JsonResponse({"userName": username, "error": "Already Registered"})
+        return JsonResponse(
+            {"userName": username, "error": "Already Registered"})
     except User.DoesNotExist:
         logger.debug(f"{username} is a new user")
 
@@ -87,7 +88,8 @@ def add_review(request):
     if request.method == "POST":
         try:
             review_data = json.loads(request.body)
-            backend_url = os.getenv("BACKEND_URL", "http://localhost:3030") + "/review"
+            backend_url = os.getenv(
+                "BACKEND_URL", "http://localhost:3030") + "/review"
             response = requests.post(backend_url, json=review_data)
             if response.status_code in [200, 201]:
                 return JsonResponse({"status": 200})
