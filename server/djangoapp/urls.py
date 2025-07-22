@@ -10,7 +10,7 @@ urlpatterns = [
     path('register', views.registration, name='register'),
 
 
-    #path for login
+    # path for login
     path(route='login', view=views.login_user, name='login'),
     path('logout', views.logout, name='logout'),
 
@@ -26,5 +26,5 @@ urlpatterns = [
 
     path(route='add_review', view=views.add_review, name='add_review'),
 
-    path(route='get_cars', view=views.get_cars, name ='getcars'),
+    path(route='get_cars', view=views.get_cars, name='getcars'),
 ] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
